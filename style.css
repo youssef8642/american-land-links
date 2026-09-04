@@ -35,6 +35,36 @@ body{
   overflow:hidden;
   margin-top:8px;
 }
+
+/* Make the header sticky so brand area is always visible on small screens */
+.page {
+  /* limit height so inner content can scroll while header remains visible */
+  max-height: calc(100vh - 24px);
+  display:flex;
+  flex-direction:column;
+}
+
+.brand{
+  position:sticky;
+  top: calc(env(safe-area-inset-top) + 6px);
+  z-index:10;
+  background:linear-gradient(180deg, rgba(11,24,36,0.6), rgba(11,24,36,0.4));
+  padding-top:8px;
+  margin: -6px -6px 12px -6px; /* extend sticky background to card edges */
+  border-radius:12px;
+}
+
+/* Allow the main content below the header to scroll if needed */
+.page > .links, .page > .info, .page > .footer{
+  /* ensure these sections can shrink and the links area can scroll inside the card */
+}
+
+/* Make the links container scroll independently when content is long */
+.links{
+  overflow:auto;
+  -webkit-overflow-scrolling:touch;
+  max-height: calc(100vh - 220px);
+}
 .brand{
   display:flex;
   gap:12px;
