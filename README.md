@@ -55,3 +55,21 @@ Next steps you might want me to do
 - Add a printable QR code image in `/assets` that points to a chosen final domain.
 - Replace the placeholder logo with a provided image.
 - Add optional social proof or real opening hours once provided.
+
+QR code files added
+- `assets/qr.svg`: SVG wrapper that displays a QR pointing to the current Pages URL: `https://youssef8642.github.io/american-land-links/`.
+- `assets/download-qr-png.sh`: small script to download a high-resolution PNG (`assets/qr.png`) using QuickChart. Run it locally to fetch the PNG.
+
+Download the PNG locally (example)
+```bash
+cd path/to/american-land-links
+chmod +x assets/download-qr-png.sh
+./assets/download-qr-png.sh
+```
+
+Or download the PNG directly in a browser using the QuickChart URL:
+```
+https://quickchart.io/qr?text=https%3A%2F%2Fyoussef8642.github.io%2Famerican-land-links%2F&size=2000
+```
+
+Test the QR after downloading or embedding by scanning it with your phone camera — it should open the Pages URL above.
