@@ -19,36 +19,41 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:28px 16px;
+  padding: max(28px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+  -webkit-overflow-scrolling:touch;
+  overflow-x:hidden;
 }
 .page{
   width:100%;
   max-width:720px;
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
   border-radius:18px;
-  padding:20px;
+  padding:18px;
   box-shadow:0 8px 30px rgba(3,7,18,0.6);
+  overflow:hidden;
 }
 .brand{
   display:flex;
   gap:12px;
   align-items:center;
-  padding:6px 6px 14px 6px;
+  padding:6px 6px 12px 6px;
   border-bottom:1px solid rgba(255,255,255,0.04);
 }
-.logo{flex:0 0 84px}
-.brand-text h1{margin:0;font-size:18px;letter-spacing:1px}
+.logo{flex:0 0 72px}
+.brand-text h1{margin:0;font-size:clamp(16px,3.6vw,20px);letter-spacing:1px}
 .category{margin:4px 0 0 0;font-weight:700;color:var(--accent);font-size:12px}
 .tagline{margin:6px 0 0 0;color:var(--muted);font-size:13px}
 
-.links{display:grid;grid-template-columns:1fr;gap:12px;padding:18px 6px}
+.links{display:grid;grid-template-columns:1fr;gap:12px;padding:14px 6px}
 .link{
-  display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;
+  display:flex;align-items:center;gap:12px;padding:16px;border-radius:12px;
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
   color:var(--white);text-decoration:none;border:1px solid rgba(255,255,255,0.04);
   box-shadow:0 6px 16px rgba(2,6,12,0.5);
+  width:100%;
+  min-height:56px;
 }
-.link .icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:rgba(255,255,255,0.02);border-radius:10px}
+.link .icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,0.02);border-radius:10px;flex:0 0 44px}
 .link .label{font-size:16px;font-weight:600}
 .link:focus,.link:hover{outline:none;transform:translateY(-2px);box-shadow:0 10px 26px rgba(2,6,12,0.6);border-color:rgba(11,130,102,0.9)}
 .link:active{transform:translateY(0);opacity:.98}
