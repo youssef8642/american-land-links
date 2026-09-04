@@ -38,8 +38,6 @@ body{
 
 /* Make the header sticky so brand area is always visible on small screens */
 .page {
-  /* limit height so inner content can scroll while header remains visible */
-  max-height: calc(100vh - 24px);
   display:flex;
   flex-direction:column;
 }
@@ -61,9 +59,8 @@ body{
 
 /* Make the links container scroll independently when content is long */
 .links{
-  overflow:auto;
+  overflow:visible;
   -webkit-overflow-scrolling:touch;
-  max-height: calc(100vh - 220px);
 }
 .brand{
   display:flex;
